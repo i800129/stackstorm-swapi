@@ -1,0 +1,7 @@
+---
+name: get-mongo-people
+pack: swapi
+description: Get swapi people from mongo db
+runner_type: python-script
+entry_point: get-mongo-people.py
+enabled: true

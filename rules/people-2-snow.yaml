@@ -1,0 +1,13 @@
+---
+name: "imc-people-2-snow"
+description: "Get all wapi people and send to mongo then servicenow."
+enabled: false
+
+trigger:
+  type: "core.st2.IntervalTimer"
+  parameters:
+    delta: 5
+    unit: minutes
+
+action:
+  ref: "swapi.people-2-snow"

@@ -1,0 +1,7 @@
+---
+name: get_people
+pack: swapi
+description: Get an array of all people from swapi
+runner_type: python-script
+entry_point: get_people.py
+enabled: true

@@ -1,0 +1,11 @@
+---
+name: load-people
+pack: swapi
+description: load swapi people into the mongo db
+runner_type: python-script
+entry_point: load-people.py
+enabled: true
+parameters:
+  people:
+    required: true
+    type: array

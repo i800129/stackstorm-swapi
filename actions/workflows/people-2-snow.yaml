@@ -1,0 +1,36 @@
+version: 1.0
+
+description: A workflow to copy swapi people from a mongo database and to snow.
+
+tasks:
+  get_people:
+    action: swapi.get_people
+    next:
+      - when: <% succeeded() %>
+        publish:
+          - people: <% result().result %>
+        do: sendmongo
+
+  sendmongo:
+    action: swapi.load-people people=<% ctx().people %>
+    next:
+      - when: <% succeeded() %>
+        do: getdocs4snow
+
+  getdocs4snow:
+    action: swapi.get-mongo-people-4-snow
+    next:
+      - when: <% succeeded() %>
+        publish:
+          - people: <% result().result %>
+        do: snowalerts
+
+  snowalerts:
+    with: <% ctx().people %>
+    action: servicenow.create_record table="u_swapi_people" payload='<% item() %>'
+    next:
+      - when: <% succeeded() %>
+        do: processevents
+
+  processevents:
+    action: swapi.process_people people=<% ctx().people %>

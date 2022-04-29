@@ -1,0 +1,6 @@
+---
+baseurl:
+  description: "Domain URL for swapi.com"
+  type: "string"
+  secret: false
+  required: true

@@ -1,0 +1,11 @@
+---
+name: process_people
+pack: swapi
+description: Set the process flag in the mongo database for swapi people to yes
+runner_type: python-script
+entry_point: process_people.py
+enabled: true
+parameters:
+  people:
+    required: true
+    type: array

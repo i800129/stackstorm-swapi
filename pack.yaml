@@ -1,0 +1,13 @@
+---
+ref: swapi
+name: swapi
+description: Starwars API Integration Pack
+keywords:
+  - Starwars
+  - George Lucas
+  - Chewbacca
+version: 0.1.0
+python_versions:
+  - "3"
+author: Rick Kauffman
+email: rick@rickkauffman.com

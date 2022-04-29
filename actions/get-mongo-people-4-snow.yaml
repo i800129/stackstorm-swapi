@@ -1,0 +1,7 @@
+---
+name: get-mongo-people-4-snow
+pack: swapi
+description: Get SWAPI people from mongo db prep for servicenow
+runner_type: python-script
+entry_point: get-mongo-people-4-snow.py
+enabled: true
