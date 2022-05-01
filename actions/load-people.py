@@ -37,49 +37,33 @@ __all__ = [
 
 
 class LoadDb(MongoBaseAction):
-    def run(self, alarms):
+    def run(self, people):
 
-        db = self.dbclient["arubaimc"]
+        db = self.dbclient["swapi"]
 
 
-        mongo_alarm = {}
+        person = {}
 
-        for alarm in alarms:
-            message = 'processing documents'
-            if db.imc_alarms.count_documents({ 'u_id': alarm[0] }, limit = 1) == 0:
-                mongo_alarm['u_id'] = alarm[0]
-                mongo_alarm['u_OID'] = alarm[1]
-                mongo_alarm['u_originalType'] = alarm[2]
-                mongo_alarm['u_originalTypeDesc'] = alarm[3]
-                mongo_alarm['u_deviceId'] = alarm[4]
-                mongo_alarm['u_deviceIp'] = alarm[5]
-                mongo_alarm['u_deviceName'] = alarm[6]
-                mongo_alarm['u_alarmLevel'] = alarm[7]
-                mongo_alarm['u_alarmLevelDesc'] = alarm[8]
-                mongo_alarm['u_alarmCategory'] = alarm[9]
-                mongo_alarm['u_faultTime'] = alarm[10]
-                mongo_alarm['u_faultTimeDesc'] = alarm[11]
-                mongo_alarm['u_recTime'] = alarm[12]
-                mongo_alarm['u_recTimeDesc'] = alarm[13]
-                mongo_alarm['u_recStatus'] = alarm[14]
-                mongo_alarm['u_recStatusDesc'] = alarm[15]
-                mongo_alarm['u_recUserName'] = alarm[16]
-                mongo_alarm['u_ackTime'] = alarm[17]
-                mongo_alarm['u_ackTimeDesc'] = alarm[18]
-                mongo_alarm['u_ackStatus'] = alarm[19]
-                mongo_alarm['u_ackStatusDesc'] = alarm[20]
-                mongo_alarm['u_ackUserName'] = alarm[21]
-                mongo_alarm['u_alarmDesc'] = alarm[22]
-                mongo_alarm['u_parentId'] = alarm[23]
-                mongo_alarm['u_somState'] = alarm[24]
-                mongo_alarm['u_remark'] = alarm[25]
-                mongo_alarm['u_holdInfo'] = alarm[26]
-                mongo_alarm['u_repeats'] = alarm[27]
-                mongo_alarm['u_resSourceType'] = alarm[28]
-                mongo_alarm['u_alarmDetail'] = alarm[29]
-                mongo_alarm['u_process'] = 'no'
-                write_record = db.imc_alarms.insert_one(mongo_alarm)
-                mongo_alarm = {}
+        for item in people:
+            message = 'processing prople'
+            if db.people.count_documents({ 'u_name': item[0] }, limit = 1) == 0:
+                person['u_name'] = item[0]
+                person['u_height'] = item[1]
+                person['u_mass'] = item[2]
+                person['u_haircolor'] = item[3]
+                person['u_skincolor'] = item[4]
+                person['u_eyecolor'] = item[5]
+                person['u_birthyear'] = item[6]
+                person['u_gender'] = item[7]
+                person['u_homeworld'] = item[8]
+                person['u_films'] = item[9]
+                person['u_species'] = item[10]
+                person['u_vehicles'] = item[11]
+                person['u_starships'] = item[12]
+                person['u_snowprocess'] = 'no'
+                person['u_kafkaprocess'] = 'no'
+                write_record = db.people.insert_one(person)
+                person= {}
 
             else:
                 message = 'Fail to write mongo record, possible duplicate'

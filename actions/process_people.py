@@ -38,14 +38,14 @@ __all__ = [
 
 
 class LoadDb(MongoBaseAction):
-    def run(self, alarms):
+    def run(self, people):
 
-        db = self.dbclient["arubaimc"]
+        db = self.dbclient["swapi"]
 
-        for alarm in alarms:
-            myquery = {"u_id": alarm['u_id']}
-            newvalues = {"$set": {"u_process": "yes" }}
-            db.imc_alarms.update_one(myquery, newvalues)
+        for item in people:
+            myquery = {"u_name": person['u_name']}
+            newvalues = {"$set": {"u_snowprocess": "yes" }}
+            db.people.update_one(myquery, newvalues)
 
 
         return ()

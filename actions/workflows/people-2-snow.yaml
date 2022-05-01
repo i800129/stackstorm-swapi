@@ -18,7 +18,7 @@ tasks:
         do: getdocs4snow
 
   getdocs4snow:
-    action: swapi.get-mongo-people-4-snow
+    action: swapi.get-mongo-people
     next:
       - when: <% succeeded() %>
         publish:
