@@ -5,6 +5,8 @@ baseurl = 'http://swapi.dev/api'
 
 query = baseurl+'/people/'
 
+print(query)
+
 #people = swapi.get_person(1)
 #print(people)
 count = 0

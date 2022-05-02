@@ -41,7 +41,7 @@ __all__ = [
 ]
 
 
-class People():
+class People(SwapiBaseAction):
     def run(self):
         list_of_urls = []
         resource = self.baseurl+'/people/'
