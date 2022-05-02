@@ -32,6 +32,7 @@
 #                                                                              #
 #------------------------------------------------------------------------------#
 import urllib3
+import requests
 from utility.get_urls import get_urls
 from lib.actions import SwapiBaseAction
 urllib3.disable_warnings()
@@ -44,8 +45,8 @@ __all__ = [
 class People(SwapiBaseAction):
     def run(self):
         list_of_urls = []
-        resource = self.baseurl+'/people/'
-        urls = get_urls(resource)
+        url = self.baseurl+'/people/'
+        urls = get_urls(url)
         for item in urls:
             response = requests.get(item)
             json_data = json.loads(response.content)

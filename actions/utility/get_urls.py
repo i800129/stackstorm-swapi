@@ -33,12 +33,12 @@
 import requests
 import json
 
-def get_urls(resource):
+def get_urls(url):
     #Get all the URLs for every resource
     urls = []
     next = True
     while next:
-        response = requests.get(resource)
+        response = requests.get(url)
         json_data = json.loads(response.content)
         for resource in json_data['results']:
             urls.append(resource['url'])
@@ -46,4 +46,4 @@ def get_urls(resource):
             resource = json_data['next']
         else:
             next = False
-        return(urls)
+        return(urls, count)
