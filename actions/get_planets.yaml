@@ -1,0 +1,7 @@
+---
+name: get_planets
+pack: swapi
+description: Get an array of all planets from swapi
+runner_type: python-script
+entry_point: get_planets.py
+enabled: true
