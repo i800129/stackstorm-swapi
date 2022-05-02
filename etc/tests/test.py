@@ -31,6 +31,6 @@ for item in urls:
     count = count + 1
     response = requests.get(item)
     json_data = json.loads(response.content)
-    print(json_data)
+    print(json_data['name'])
     line = str(count) + '++++++++++++++++++++++++++++++++++++++'
     print(line)

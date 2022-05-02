@@ -47,20 +47,22 @@ class People(SwapiBaseAction):
         resource = self.baseurl+'/people/'
         urls = get_urls(resource)
         for item in urls:
+            response = requests.get(item)
+            json_data = json.loads(response.content)
             info = [
-                    item['name'],
-                    item['height'],
-                    item['mass'],
-                    item['hair_color'],
-                    item['skin_color'],
-                    item['eye_color'],
-                    item['birth_year'],
-                    item['gender'],
-                    item['homeworld'],
-                    item['films'],
-                    item['species'],
-                    item['vehicles'],
-                    item['starships']
+                    json_data['name'],
+                    json_data['height'],
+                    json_data['mass'],
+                    json_data['hair_color'],
+                    json_data['skin_color'],
+                    json_data['eye_color'],
+                    json_data['birth_year'],
+                    json_data['gender'],
+                    json_data['homeworld'],
+                    json_data['films'],
+                    json_data['species'],
+                    json_data['vehicles'],
+                    json_data['starships']
                     ]
             list_of_urls.append(info)
             info = []
