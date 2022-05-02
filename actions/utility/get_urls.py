@@ -35,7 +35,7 @@ def get_urls(resource):
     urls = []
     next = True
     while next:
-        response = requests.get(query)
+        response = requests.get(resource)
         json_data = json.loads(response.content)
         for resource in json_data['results']:
             urls.append(resource['url'])
