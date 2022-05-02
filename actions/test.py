@@ -1,7 +1,8 @@
 import json
 import requests
 import swapi
-baseurl = 'http://swapi.dev/api'
+from utility.get_urls import get_urls
+baseurl = 'https://swapi.dev/api'
 
 query = baseurl+'/people/'
 
@@ -14,21 +15,9 @@ count = 0
 #json_data = json.loads(response.content)
 #print(json_data['name'])
 
-''' Get all the URLs for every resource'''
-urls = []
-next = True
-while next:
-    response = requests.get(query)
-    json_data = json.loads(response.content)
-    for resource in json_data['results']:
-        urls.append(resource['url'])
-    if bool(json_data['next']):
-        query = json_data['next']
-    else:
-        next = False
-
-
+urls = get_urls(query)
 print('len of urls'+str(len(urls)))
+
 for item in urls:
     count = count + 1
     response = requests.get(item)

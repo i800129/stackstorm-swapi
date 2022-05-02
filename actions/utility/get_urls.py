@@ -33,17 +33,17 @@
 import requests
 import json
 
-def get_urls(url):
+def get_urls(query):
     #Get all the URLs for every resource
     urls = []
     next = True
     while next:
-        response = requests.get(url)
+        response = requests.get(query)
         json_data = json.loads(response.content)
         for resource in json_data['results']:
             urls.append(resource['url'])
         if bool(json_data['next']):
-            resource = json_data['next']
+            query = json_data['next']
         else:
             next = False
-        return(urls)
+    return(urls)
