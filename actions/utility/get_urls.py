@@ -30,6 +30,9 @@
 #                                                                              #
 #------------------------------------------------------------------------------#
 
+import requests
+import json
+
 def get_urls(resource):
     #Get all the URLs for every resource
     urls = []
