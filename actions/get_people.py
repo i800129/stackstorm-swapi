@@ -33,6 +33,7 @@
 #------------------------------------------------------------------------------#
 import urllib3
 import requests
+import json
 from utility.get_urls import get_urls
 from lib.actions import SwapiBaseAction
 urllib3.disable_warnings()

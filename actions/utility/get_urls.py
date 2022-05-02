@@ -46,4 +46,4 @@ def get_urls(url):
             resource = json_data['next']
         else:
             next = False
-        return(urls, count)
+        return(urls)
