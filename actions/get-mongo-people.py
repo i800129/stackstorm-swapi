@@ -46,7 +46,7 @@ class GetDb(MongoBaseAction):
         list_to_process = []
         person = {}
 
-        myquery = {"u_process": 'no'}
+        myquery = {"u_snowprocess": 'no'}
         people = list(known.find(myquery))
 
         for item in people:
