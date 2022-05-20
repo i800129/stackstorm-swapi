@@ -42,11 +42,10 @@ class LoadDb(MongoBaseAction):
 
         db = self.dbclient["swapi"]
 
-
         person = {}
 
         for item in people:
-            message = 'processing prople'
+            message = 'processing people'
             if db.people.count_documents({ 'u_name': item[0] }, limit = 1) == 0:
                 person['u_name'] = item[0]
                 person['u_height'] = item[1]

@@ -1,5 +1,5 @@
 ---
-name: "imc-people-2-snow"
+name: "people-2-snow"
 description: "Get all wapi people and send to mongo then servicenow."
 enabled: false
 

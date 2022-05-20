@@ -45,7 +45,7 @@ __all__ = [
 
 class People(SwapiBaseAction):
     def run(self):
-        list_of_urls = []
+        list_of_people = []
         url = self.baseurl+'/people/'
         urls = get_urls(url)
         for item in urls:
@@ -66,6 +66,6 @@ class People(SwapiBaseAction):
                     json_data['vehicles'],
                     json_data['starships']
                     ]
-            list_of_urls.append(info)
+            list_of_people.append(info)
             info = []
-        return list_of_urls
+        return list_of_people
