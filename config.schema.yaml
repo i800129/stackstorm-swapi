@@ -4,3 +4,13 @@ baseurl:
   type: "string"
   secret: false
   required: true
+dbuser:
+  description: "Username for user database"
+  type: "string"
+  secret: false
+  required: false
+dbpass:
+  description: "Password for user database"
+  type: "string"
+  secret: true
+  required: false
