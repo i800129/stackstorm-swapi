@@ -54,7 +54,7 @@ class LoadDb(MongoBaseAction):
                 planet['u_climate'] = item[4]
                 planet['u_gravity'] = item[5]
                 planet['u_terrain'] = item[6]
-                planet['u_surfacewater'] = item[7]
+                planet['u_surface_water'] = item[7]
                 planet['u_population'] = item[8]
                 planet['u_residents'] = item[9]
                 planet['u_films'] = item[10]
