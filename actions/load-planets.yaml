@@ -1,0 +1,11 @@
+---
+name: load-planets
+pack: swapi
+description: load swapi planets into the mongo db
+runner_type: python-script
+entry_point: load-planets.py
+enabled: true
+parameters:
+  people:
+    required: true
+    type: array
