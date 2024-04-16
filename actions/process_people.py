@@ -42,6 +42,8 @@ class LoadDb(MongoBaseAction):
 
         db = self.dbclient["swapi"]
 
+        person = {}
+
         for item in people:
             myquery = {"u_name": person['u_name']}
             newvalues = {"$set": {"u_snowprocess": "yes" }}
