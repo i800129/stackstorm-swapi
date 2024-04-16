@@ -64,7 +64,8 @@ class People(SwapiBaseAction):
                     json_data['films'],
                     json_data['species'],
                     json_data['vehicles'],
-                    json_data['starships']
+                    json_data['starships'],
+                    json_data['url']
                     ]
             list_of_people.append(info)
             info = []

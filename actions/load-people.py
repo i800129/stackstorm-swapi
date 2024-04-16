@@ -60,6 +60,7 @@ class LoadDb(MongoBaseAction):
                 person['u_species'] = item[10]
                 person['u_vehicles'] = item[11]
                 person['u_starships'] = item[12]
+                person['u_url'] = item[13]
                 person['u_snowprocess'] = 'no'
                 person['u_kafkaprocess'] = 'no'
                 write_record = db.people.insert_one(person)
