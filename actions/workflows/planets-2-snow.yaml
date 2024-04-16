@@ -26,4 +26,4 @@ tasks:
         do: processevents
 
   processevents:
-    action: swapi.process_people people=<% ctx().people %>
+    action: swapi.process_planets planets=<% ctx().planets %>

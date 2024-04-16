@@ -1,0 +1,11 @@
+---
+name: process_planets
+pack: swapi
+description: Set the process flag in the mongo database for swapi planets to yes
+runner_type: python-script
+entry_point: process_planets.py
+enabled: true
+parameters:
+  people:
+    required: true
+    type: array
