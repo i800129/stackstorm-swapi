@@ -42,11 +42,9 @@ class LoadDb(MongoBaseAction):
 
         db = self.dbclient["swapi"]
 
-        person = {}
-
         for item in people:
-            print("Item: ",item)
-            myquery = {"u_name": person['u_name']}
+            #print("Item: ",item)
+            myquery = {"u_name": item['u_name']}
             newvalues = {"$set": {"u_snowprocess": "yes" }}
             db.people.update_one(myquery, newvalues)
 
