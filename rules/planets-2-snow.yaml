@@ -1,0 +1,13 @@
+---
+name: "planets-2-snow"
+description: "Get all swapi planets and send to mongo then servicenow."
+enabled: false
+
+trigger:
+  type: "core.st2.IntervalTimer"
+  parameters:
+    delta: 5
+    unit: minutes
+
+action:
+  ref: "swapi.planets-2-snow"
