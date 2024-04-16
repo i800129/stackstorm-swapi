@@ -1,0 +1,29 @@
+version: 1.0
+
+description: A workflow to copy swapi planets from a mongo database and to snow.
+
+tasks:
+  get_planet:
+    action: swapi.get_planets
+    next:
+      - when: <% succeeded() %>
+        publish:
+          - planets: <% result().result %>
+        do: sendmongo
+
+  sendmongo:
+    action: swapi.load-planets planets=<% ctx().planets %>
+    next:
+      - when: <% succeeded() %>
+        do: getdocs4snow
+
+  getdocs4snow:
+    action: swapi.get-mongo-planets
+    next:
+      - when: <% succeeded() %>
+        publish:
+          - planets: <% result().result %>
+        do: processevents
+
+  processevents:
+    action: swapi.process_people people=<% ctx().people %>
