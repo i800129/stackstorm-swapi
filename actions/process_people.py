@@ -45,6 +45,7 @@ class LoadDb(MongoBaseAction):
         person = {}
 
         for item in people:
+            print("Item: ",item)
             myquery = {"u_name": person['u_name']}
             newvalues = {"$set": {"u_snowprocess": "yes" }}
             db.people.update_one(myquery, newvalues)
