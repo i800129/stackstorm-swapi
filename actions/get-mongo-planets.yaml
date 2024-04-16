@@ -1,0 +1,7 @@
+---
+name: get-mongo-planets
+pack: swapi
+description: Get swapi planets from mongo db
+runner_type: python-script
+entry_point: get-mongo-planets.py
+enabled: true
