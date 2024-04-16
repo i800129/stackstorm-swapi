@@ -23,6 +23,13 @@ tasks:
       - when: <% succeeded() %>
         publish:
           - planets: <% result().result %>
+        do: snowalerts
+
+  snowalerts:
+    with: <% ctx().planets %>
+    action: servicenow.create_record table="u_swapi_planets" payload='<% item() %>'
+    next:
+      - when: <% succeeded() %>
         do: processevents
 
   processevents:

@@ -6,7 +6,7 @@ enabled: false
 trigger:
   type: "core.st2.IntervalTimer"
   parameters:
-    delta: 5
+    delta: 1
     unit: minutes
 
 action:
