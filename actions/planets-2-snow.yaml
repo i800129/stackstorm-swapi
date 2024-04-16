@@ -1,0 +1,6 @@
+---
+name: planets-2-snow
+description: A workflow for getting swapi planets into a mongo database then servicenow.
+runner_type: orquesta
+entry_point: workflows/planets-2-snow.yaml
+enabled: true
