@@ -62,7 +62,8 @@ class Planets(SwapiBaseAction):
                     json_data['surface_water'],
                     json_data['population'],
                     json_data['residents'],
-                    json_data['films']
+                    json_data['films'],
+                    json_data['url']
                     ]
             list_of_planets.append(info)
             info = []

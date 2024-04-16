@@ -61,6 +61,7 @@ class GetDb(MongoBaseAction):
             planet['u_population'] = item['u_population']
             planet['u_residents'] = item['u_residents']
             planet['u_films'] = item['u_films']
+            planet['u_url'] = item['u_url']
             planet['u_snowprocess'] = 'no'
             planet['u_kafkaprocess'] = 'no'
             list_to_process.append(person)

@@ -58,9 +58,7 @@ class LoadDb(MongoBaseAction):
                 planet['u_population'] = item[8]
                 planet['u_residents'] = item[9]
                 planet['u_films'] = item[10]
-                planet['u_created'] = item[11]
-                planet['u_edited'] = item[12]
-                planet['u_url'] = item[13]
+                planet['u_url'] = item[11]
                 planet['u_snowprocess'] = 'no'
                 planet['u_kafkaprocess'] = 'no'
                 write_record = db.planets.insert_one(planet)
