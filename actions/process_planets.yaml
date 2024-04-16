@@ -6,6 +6,6 @@ runner_type: python-script
 entry_point: process_planets.py
 enabled: true
 parameters:
-  people:
+  planets:
     required: true
     type: array
