@@ -6,6 +6,6 @@ runner_type: python-script
 entry_point: load-planets.py
 enabled: true
 parameters:
-  planet:
+  planets:
     required: true
     type: array
