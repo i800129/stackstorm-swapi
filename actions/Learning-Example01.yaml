@@ -1,0 +1,11 @@
+name: Learning-Example01
+pack: swapi
+description: A basic sequential workflow.
+runner_type: orquesta
+entry_point: workflows/Example01.yaml
+enabled: true
+parameters:
+  name:
+    required: true
+    type: string
+    default: Hagan
