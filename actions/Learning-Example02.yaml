@@ -1,0 +1,23 @@
+name: Learning-Example02
+pack: swapi
+description: complex workflow with branches and join and various ways to define tasks and task transitions.
+runner_type: orquesta
+entry_point: workflows/Example02.yaml
+enabled: true
+parameters:
+  a:
+    required: false
+    type: number
+    default: 0
+  b:
+    required: false
+    type: number
+    default: 0
+  c:
+    required: false
+    type: number
+    default: 0
+  d:
+    required: false
+    type: number
+    default: 0
